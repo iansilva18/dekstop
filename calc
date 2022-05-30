@@ -1,0 +1,35 @@
+from cProfile import label
+from cgitb import text
+from tkinter import *
+
+from setuptools import Command
+
+janela = Tk()
+
+def soma():
+    var1 = int(n1.get())
+    var2 = int(n2.get())
+    soma = var1 + var2
+    bt3 [ text] = soma
+
+#geometria
+janela.geometry ('500x500')
+janela.minsize (width=100, height=100)
+janela.maxsize (width=900, height=600 )
+
+#widget
+lb1 = Label(janela, text='resultado', font= 'Aria 12')
+n1 = Entry(janela, font='Arial 12')
+n2= Entry(janela, font='Arial 12')
+lb2 = Label(janela, text='')
+
+bt3 = Button(janela, text='imprimir', font='arial 11' command=print) 
+
+#layout
+lb1.pack()
+n1.pack()
+n2.pack()
+bt3.pack()
+ 
+ 
+janela.mainloop()
