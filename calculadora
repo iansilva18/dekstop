@@ -1,0 +1,76 @@
+from logging import root
+from tkinter import *
+
+root = Tk()
+
+
+
+
+root.grid_rowconfigure(1,weight=1)
+root.grid_columnconfigure(0,weight=1)
+root.grid_rowconfigure(2,weight=1)
+root.grid_columnconfigure(1,weight=1)
+root.grid_rowconfigure(3,weight=1)
+root.grid_columnconfigure(2,weight=1)
+root.grid_rowconfigure(4,weight=1)
+root.grid_columnconfigure(3,weight=1)
+root.grid_rowconfigure(5,weight=1)
+
+
+
+def entrada(valor):
+    lb ['text'] += valor 
+    
+def limpar():
+    lb['text'] = ''
+
+
+lb = Label (root, text='', font= 'arial 12' )
+blp = Button(root, text='<-', command=lambda: limpar('<-'))
+
+b9 = Button(root, text='9', font='arial 12', command=lambda: entrada('9'))
+b8 = Button(root, text='8', font='arial 12', command=lambda: entrada('8'))
+b7 = Button(root, text='7', font='arial 12', command=lambda: entrada('7'))
+b6 = Button(root, text='6', font='arial 12', command=lambda: entrada('6')) 
+b5 = Button(root, text='5', font='arial 12', command=lambda: entrada('5'))
+b4 = Button(root, text='4', font='arial 12', command=lambda: entrada('4'))
+b3 = Button(root, text='3', font='arial 12', command=lambda: entrada('3'))
+b2 = Button(root, text='2', font='arial 12', command=lambda: entrada('2'))
+b1 = Button(root, text='1', font='arial 12', command=lambda: entrada('1'))
+b0 = Button(root, text='0', font='arial 12', command=lambda: entrada('0'))
+
+bd = Button(root, text='/', font='arial 12', command=lambda: entrada('/'))
+bx = Button(root, text='X', font='arial 12', command=lambda: entrada('X'))
+bm = Button(root, text='-', font='arial 12', command=lambda: entrada('-'))
+bmais = Button(root, text='+', font='arial 12', command=lambda: entrada('+'))
+bi = Button(root, text='=', font='arial 12',command=lambda: entrada('='))
+
+root.geometry ('500x500')
+root.minsize (width=100, height=100)
+
+
+
+
+
+lb.grid(row=0, column=1)
+blp.grid(row=0, column=0, sticky=NSEW)
+b9.grid(row=2, column=2, sticky=NSEW)
+b8.grid(row=2, column=1, sticky=NSEW)
+b7.grid(row=2,column=0 , sticky=NSEW)
+b4.grid(row=3 ,column=0 , sticky=NSEW)
+b5.grid(row=3 ,column=1 , sticky=NSEW)
+b6.grid(row=3 ,column=2 , sticky=NSEW)
+b1.grid(row=4 ,column=0 , sticky=NSEW)
+b2.grid(row=4 ,column=1 , sticky=NSEW)
+b3.grid(row=4 ,column=2 , sticky=NSEW)
+b0.grid(row=5 ,column=1 , sticky=NSEW)
+
+bd.grid(row=2 ,column=3 , sticky=NSEW)
+bx.grid(row=3 ,column=3 , sticky=NSEW)
+bm.grid(row=4 ,column=3 , sticky=NSEW)
+bmais.grid(row=5 ,column=3 , sticky=NSEW)
+bi.grid(row=5 ,column=2, sticky=NSEW)
+
+
+        
+root.mainloop()
