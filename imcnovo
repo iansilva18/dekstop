@@ -1,39 +1,51 @@
-from cProfile import label
-from cgitb import text
+from logging import root
 from tkinter import *
-from tkinter import font
 
-root = Tk()
+#window
+root=Tk()
 
-fr1 = Frame(root)
+#alteaçoes
+fr1 = Frame(root, bg='black')
 
-fr2 = Frame(root)
-
-def soma ():
-    f = (int(lb3.get)) * 1.8
+fr2 = Frame(root, bg='red')
 
 
 
+def somar():
+   r=(float(in2.get())) / ((float(in1.get()))*(float(in1.get())))
 
-root.grid_rowconfigure(0,weight=1)
-root.grid_columnconfigure(0,weight=1)
-root.grid_columnconfigure(1, weight=1)
-root.grid_columnconfigure(2, weight=1)
-
-
-lb1 = Label(fr1, text='C', font='arial 12')
-lb2 = Button(root, text='F', font='arial 12')
-lb3 = Entry()
-lbr = Label(fr2, text='Resultado', font='arial 12')
-
-
-lb2.grid(row=1, column=0, sticky=NSEW)
-lb1.grid(row=0, column=0, sticky=NSEW)
-lb3.grid(row=0, column=2, sticky=NSEW)
-lbr.grid(row=1, column=1, sticky=NSEW)
+   if r < 18.5:
+    lb4['text']='Peso Baixo'
+   if r >18.5 and r<24.9:
+    lb4['text']='Peso Normal'
+   if r >24.9 and r<29.9:
+    lb4['text']='Sobrepeso'
+   if r >30.0 and r<35.0:
+    lb4['text']='Obesidade 1'
+   if r >35.0 and r<40.0:
+    lb4['text']='Obesidade 2'
+   if r >=40.0:
+    lb4['text']='Obesidade 3'
+    
+#widgets
+lb1= Label(fr1, text='Cálculo MC', font='Arial 12')
+lb2= Label( text='Altura', font='Arial 12')
+lb3= Label( text='Peso', font='Arial 12')
+lb4= Label( text='Status', font='Arial 11')
+in1=Entry()
+in2=Entry()
+bt1= Button(fr1, text='Calcular', font='Arial 20', command=somar)
 
 fr1.pack()
 fr2.pack()
 
+#layout
+lb1.grid(row=1,column=0, padx= 10, sticky=NSEW)
+lb2.grid(row=2,column=0, padx= 10, sticky=NSEW)
+in1.grid(row=3,column=0, padx= 10, sticky=NSEW)
+lb3.grid(row=4,column=0, padx= 10, sticky=NSEW)
+in2.grid(row=5,column=0, padx= 10, sticky=NSEW)
+bt1.grid(row=6,column=0, padx= 10, sticky=NSEW)
+lb4.grid(row=7,column=0, padx= 10, sticky=NSEW)
 
-root.mainloop()
+root=mainloop()
